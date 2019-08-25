@@ -1,0 +1,22 @@
+#b. You will be provided a text file, which is in our Moodle classroom under Unit 15 titled ‘websites.txt’.
+
+#c. For your script, you will need to loop through the file line by line with a for loop and open each website listed within the file within the browser with the use of the webbrowser library. Note: Do not use threading for this task!
+
+#d. For your script, you will need to provide a screenshot showing your completed script being run, and you will also need to submit it in a text file, along with this document.
+import webbrowser
+
+
+def websiteOpen():
+    with open('./websites.txt') as webpage:
+        for line in webpage:
+            line = line.strip()
+            webbrowser.open_new_tab(line)
+
+
+if __name__ == '__main__':
+    while True:
+        value = input("Do you want to open your default webpages? Press any key to continue, 0 to quit...")
+        if value == '0':
+            break
+        websiteOpen()
+
