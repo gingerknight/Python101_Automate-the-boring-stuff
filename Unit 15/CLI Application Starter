@@ -1,0 +1,38 @@
+#b. Create a script that uses a menu system to ask the user if they want to run the following:
+
+#		1. Calculator (Note: /usr/bin/gnome-calculator)
+#		2. Text Editor (Note: gedit)
+#		3. Web Browser (Note: firefox)
+#		4. Quit Menu
+
+#c. Your menu must also display the current date and time in an appropriate format. The menu system should also handle incorrect entries appropriately.
+
+#d. For your script, you will need to provide a screenshot showing your completed script run, and you will also need to submit it in a text file, along with this document.
+
+
+import datetime
+import os
+
+
+ans=True
+while ans:
+    now = datetime.datetime.now()
+    print("User Menu:"
+          "\n1. Calculator"
+          "\n2. Text Editor"
+          "\n3. Web Browser"
+          "\n4. Quit Menu"
+    "",
+          now.strftime("\nToday's Date is: \n%Y - %m - %d \nThe current time is(24hour): \n%H:%M:%S"))
+    ans=input("Please select a menu option...")
+    if ans == "1":
+        os.system('/usr/bin/gnome-calculator')
+    elif ans == "2":
+        os.system('gedit')
+    elif ans == "3":
+        os.system('/usr/bin/firefox')
+    elif ans == "4":
+        print("\n Goodbye..")
+        ans = None
+    else:
+        print("\n Not a Valid Choice, please enter a number and try again....")
