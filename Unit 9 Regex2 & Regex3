@@ -1,0 +1,29 @@
+#c. Next within your Unit9Regex1.py file, type the following; **Note make sure you type this in, do not copy!**:
+
+#emailstring = ‘Cochise College has multiple email addresses to include admissions@cochise.edu and fa@cochise.edu which are important to know!’
+
+#d. Next, modify your Unit9Regex1.py file to search the string ‘emailstring’ above and then print out all email addresses contained within the string.
+
+#e. For your script, you will need to provide a screenshot showing your completed script, and you will also need to submit it in a text file, along with this document.
+
+import re
+
+emailString = "Cochise College has multiple email addresses to include admissions@cochise.edu and fa@cochise.edu which are important to know!"
+emails = re.findall(r'\w+@\w+', emailString)
+
+print(emails)
+
+#b. Next within your Unit9Regex2.py file, type the following; **Note make sure you type this in, do not copy!**:
+
+#websitestring = ‘Cochise College has multiple websites to include http://www.cochise.edu and http://my.cochise.edu which are important to know!’
+
+#c. Next, modify your Unit9Regex2.py file to search the string ‘websitestring’ above and then print out ONLY the first website contained within the string.
+
+#d. For your script, you will need to provide a screenshot showing your completed script, and you will also need to submit it in a text file, along with this document.
+
+import re
+
+webSiteString = "Cochise College has multiple websites to include http://www.cochise.edu and http://my.cochise.edu which are important to know!"
+webSearch = re.search(r'\D{4}:\D{5}\.\w+\.\w+', webSiteString)
+
+print(webSearch)
