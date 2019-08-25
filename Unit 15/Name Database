@@ -1,0 +1,30 @@
+#c. For your script, you will need to ask a user for an unknown number of names (one at a time) and give the user a way to let your script know they are done entering names.
+
+#d. The names entered by the user should be stored in a List. You will need to print out the contents of the list. Then you will need to take the List and sort it and display it. You will then need to take the sorted List and display it reverse order.
+
+#e. For your script, you will need to provide a screenshot showing your completed script being run, and you will also need to submit it in a text file, along with this document.
+
+names = []
+while True:
+    print("Please enter a name for slot " + str(len(names) + 1) + 'or enter 0 to quit...')
+    value = input()
+    if value == '0':
+        break
+    names = names + [value]
+
+
+def listFunc():
+    for i in names:
+        print(i)
+    names.sort(reverse=True)
+    print("Your names in reverse order are...")
+    for j in names:
+        print(j)
+    print("Your names in sorted order are...")
+    names.sort(reverse=False)
+    for k in names:
+        print(k)
+
+
+if __name__ == '__main__':
+    print(listFunc())
