@@ -1,0 +1,27 @@
+# a. Highlight your project “Unit10” then right click.  When you right click a menu will appear, from this menu select New->Python File.  Then a dialog box will appear, in the “Name” field of the dialog box type “Unit10Files2.py”.
+
+# b. Within your “Unit10Files2.py” file configure your script to display your current working directory by utilizing the os library for Python.
+
+# c. Within your “Unit10Files2.py” file next configure your script to copy the file “test123.txt” that was created in the first section of this assignment to be renamed as “test321.txt” by utilizing the shutils library.
+
+# d. Within your “Unit10Files2.py” file next configure your script to delete the file “test123.txt” by utilizing the os library.
+
+# e. Within your “Unit10Files2.py” file, configure your script to delete the file “test321.txt” by utilizing the send2trash library.
+
+import os
+import shutil
+import send2trash
+
+os.getcwd()
+print(os.getcwd())
+shutil.copy('test123.txt', 'test321.txt')
+
+testfile = open('C:\\Users\\Ryan Richmond\\PycharmProjects\\Unit10\\test321.txt', encoding="utf8")
+print(testfile.read())
+testfile.close()
+
+os.unlink('test123.txt')
+testfile.close()
+send2trash.send2trash('test321.txt')
+
+
