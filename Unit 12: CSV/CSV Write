@@ -1,0 +1,24 @@
+# a. Start the PyCharm Edu IDE.  Select “File->New Project” on the next screen, ensure “Pure Python” is highlighted.  Then under “Location” change the word “untitled” to “Unit12”.  Then click the “Create” button.
+
+# b. Highlight your project “Unit12” then right click.  When you right click a menu will appear, from this menu select New->Python File.  Then a dialog box will appear, in the “Name” field of the dialog box type “CSVwrite.py”.
+
+# c. Create a CSV file utilizing the csv library, named ‘cochise.csv’.  It should have four different rows.  The rows within the CSV file should be the following in order:
+
+# Cochise, College, Online
+# CIS, 164, Python, Programming
+# Cochise, College, Sierra Vista, Campus
+# Hello, World!
+
+# Provide a screenshot of your script’s output when run, and also provide your code within this document copied and pasted from your file.
+
+import csv
+outputFile = open('cochise.csv', 'w', newline='')
+outputWriter = csv.writer(outputFile)
+
+outputWriter.writerow(['Cochise', 'College', 'Online'])
+outputWriter.writerow(['CIS', '164', 'Python', 'Programming'])
+outputWriter.writerow(['Cochis  e', 'College', 'Sierra Vista', 'Campus'])
+outputWriter.writerow(['Hello', 'World!'])
+
+outputFile.close()
+
