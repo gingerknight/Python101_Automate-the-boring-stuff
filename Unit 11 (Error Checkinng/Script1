@@ -1,0 +1,35 @@
+# c. Within your “Unit11ErrorCheck1.py” file you will be creating a program that will allow a user to enter a golfer’s name and their golf score for as many golfers as needed, with its output being written to a file named ‘golf.txt’.
+
+# d. For your script, you must error check the golf score (it must be an integer)!  If the golf score is not an integer you will need to Raise an Exception to state that the value is not an integer.
+
+# e. The following is an example of what your ‘golf.txt’ should look like:
+
+# Tiger Woods
+# 72
+# Arnold Palmer
+# 68
+
+# f. For your script, you will need to provide a screenshot showing your completed script run, and you will also need to submit it in a text file, along with this document.
+golfers = {}
+
+
+def golfTourneyScore(name, strokes):
+    if strokes.isdigit():
+        print('Score-sheet has been updated.')
+    else:
+        raise Exception('The score must be an integer')
+    golfers[name] = strokes
+    for x, y in golfers.items():
+        print(x + '\n' + y)
+
+
+while True:
+    golfer = input('Enter a name: (blank to quit)')
+    if golfer == '':
+        break
+    print('You entered ' + golfer)
+    score = input('What is their score for the Tournament?')
+    try:
+        golfTourneyScore(golfer, score)
+    except Exception as err:
+        print('There was an error: ' + str(err))
