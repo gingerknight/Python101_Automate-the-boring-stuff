@@ -1,0 +1,28 @@
+# c. Highlight your project “Unit10” then right click.  When you right click a menu will appear, from this menu select New->File.  Then a dialog box will appear, in the “Enter a new file name” field of the dialog box type “test123.txt”.  Then when the test123.txt file has been created, within the file enter the following, “I love Python programming!”.  Provide a screenshot
+
+# d. Within your “Unit10Files1.py” file configure your script to read the newly created “test123.txt” file above and display its contents as a single string value.
+
+# e. You will then need to provide a screenshot showing your completed script.
+
+# f. Next, modify your “Unit10Files1.py” file to append to the file “test123.txt” created above, to add ‘Python is the best!’ to the file.
+
+# g. For your script, you will need to provide a screenshot showing your completed script, and you will also need to submit it in a text file, along with this document.
+
+import os
+os.getcwd()
+print(os.getcwd())
+print(os.path.exists('C:\\Users\\Ryan Richmond\\PycharmProjects\\Unit10\\test123.txt'))
+
+testfile = open('C:\\Users\\Ryan Richmond\\PycharmProjects\\Unit10\\test123.txt', encoding="utf8")
+print(testfile.read())
+testfile.close()
+
+testfile = open('C:\\Users\\Ryan Richmond\\PycharmProjects\\Unit10\\test123.txt', 'a')
+testfile.write('Python is the best!\n')
+testfile.close()
+
+testfile = open('C:\\Users\\Ryan Richmond\\PycharmProjects\\Unit10\\test123.txt', encoding="utf8")
+print(testfile.read())
+testfile.close()
+
+
