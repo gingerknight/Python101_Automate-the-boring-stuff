@@ -1,0 +1,61 @@
+# c. Next within your Unit7Strings.py file, type the following; **Note make sure you type this in, do not copy!**:
+
+# school = “cochise college”
+# place = “online”
+
+# d. Next, modify your Unit7Strings.py file to have a function that takes two parameters, school and place, have your function return the first 5 characters of each parameter value, utilizing a slice.
+
+# e. Next, modify your Unit7Strings.py file to have a function that takes two parameters, school and place, have your function return the first character of each parameter, utilizing an index value.
+
+# f. Next, modify your Unit7Strings.py file to have a function that takes two parameters, school and place, have your function return the last character of the variable place for each parameter, utilizing an index value.
+
+# g. Next, modify your Unit7Strings.py file to have a function that takes two parameters, school and place, have your function return the variables school and place in title form.
+
+# h. Lastly, modify your Unit7Strings.py file to have a function that takes two parameters, school and place, have your function check to verify that ‘cochise’ is in the school parameter and ‘online’ is in the place parameter.  If it is have the function return, ‘Great you go to Cochise College Online!’, else have the function return, ‘You should check out Cochise College Online!’
+
+# i. For your script, you will need to provide a screen-shot showing your completed script being run, and you will also need to submit it in a text file, along with this document.
+
+school = "cochise college"
+place = "online"
+
+
+def slicefunc(skoolfirst5, placefirst5):
+    skoolfirst5 = school[0:6]
+    placefirst5 = place[0:6]
+    return skoolfirst5, placefirst5
+
+
+def firstslicefunc(skool1, place1):
+    skool1 = school[0]
+    place1 = place[0]
+    return skool1, place1
+
+
+def lastslicefunc(skoollast, placelast):
+    skoollast = school[14]
+    placelast = place[5]
+    return skoollast,  placelast
+
+
+def titlefunc(titleschool, titleplace):
+    titleschool = str.title(school)
+    titleplace = str.title(place)
+    return titleschool, titleplace
+
+
+def finalfunc(a, b):
+    if 'cochise' in school:
+        if 'online' in place:
+            return 'Great you go to Cochise College Online!'
+    else:
+            print('You should check out Cochise College Online!')
+
+
+if __name__ == '__main__':
+
+    print(slicefunc(school, place))
+    print(firstslicefunc(school, place))
+    print(lastslicefunc(school, place))
+    print(titlefunc(school, place))
+    print(finalfunc(school, place))
+
