@@ -1,0 +1,49 @@
+# b. Create a python script with a function named openWebsite. The function will have no parameters.  For the function you will use the webbrowser library to open the following webpages:
+
+# https://xkcd.com/210/
+# http://xkcd.com/1303/
+# https://xkcd.com/1309/
+# https://xkcd.com/1349/
+# https://xkcd.com/1373/
+# http://xkcd.com/1742/
+# https://www.cochise.edu/
+
+# c. In the main portion of your script, you will use the threading library to call your function, openWebsite, using multithreading.
+
+# d. Provide a screenshot of your script’s output when run, and also provide your code within this document copied and pasted from your file.
+import threading
+import webbrowser
+#websiteListSecure = ["https://xkcd.com/210/", "https://xkcd.com/1309/", "https://xkcd.com/1349/", "https://xkcd.com/1373/", "https://www.cochise.edu/"]
+#websiteListUnsecure = ["http://xkcd.com/1303/", "http://xkcd.com/1742/"]
+
+
+def openWebsite1():
+    webbrowser.open("https://xkcd.com/210/")
+    webbrowser.open_new_tab("https://xkcd.com/1309/")
+    webbrowser.open_new_tab("https://xkcd.com/1349/")
+    webbrowser.open_new_tab("https://xkcd.com/1373/")
+    webbrowser.open_new_tab("https://www.cochise.edu/")
+
+
+def openWebsite2():
+    webbrowser.open("http://xkcd.com/1303/")
+    webbrowser.open_new_tab("http://xkcd.com/1742/")
+
+
+if __name__ == "__main__":
+    # creating thread
+    t1 = threading.Thread(target=openWebsite1)
+    t2 = threading.Thread(target=openWebsite2)
+
+    # starting thread 1
+    t1.start()
+    # starting thread 2
+    t2.start()
+
+    # wait until thread 1 is completely executed
+    t1.join()
+    # wait until thread 2 is completely executed
+    t2.join()
+
+    # both threads completely executed
+    print("Done!")
