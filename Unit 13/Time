@@ -1,0 +1,30 @@
+# c. Create a Python script with a function named ‘timeReporting’ that accepts one parameter value.  The parameter value will be an integer that is used for the time.sleep() method.
+
+# d. Your function when called in the main portion of your script will need to print out, just like the following:
+
+# The Current Date is: 10/01/2017
+# The Current Time is: 08:00:00
+# ***Insert pause here***
+# The Current Date is: 10/01/2017
+# The Current Time is: 08:00:05
+
+# Provide a screenshot of your script’s output when run, and provide your code within this document copied and pasted from your file.
+import datetime
+import time
+
+
+def timeReporting(sleep):
+    try:
+        while True:
+            now = datetime.datetime.now()
+            print('The current Date is: ' + now.strftime("%m/%d/%Y"))
+            print('The Current Time is: ' + now.strftime("%I:%M:%S:%p"))
+            time.sleep(sleep)
+    except KeyboardInterrupt:
+        print("\nFinished")
+
+
+if __name__ == "__main__":
+    valueTime = input('How long do you want the rest period?')
+    valueTime = float(valueTime)
+    timeReporting(valueTime)
