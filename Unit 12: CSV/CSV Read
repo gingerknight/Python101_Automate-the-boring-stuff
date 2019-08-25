@@ -1,0 +1,13 @@
+# a. Highlight your project “Unit12” then right click.  When you right click a menu will appear, from this menu select New->Python File.  Then a dialog box will appear, in the “Name” field of the dialog box type “CSVread.py”.
+
+# b. Create a python script that displays the contents of the ‘cochise.csv’ file created earlier utilizing the csv library.  Provide a screenshot of your script’s output when run, and also provide your code within this document copied and pasted from your file.
+
+import csv
+
+readFile = open('./cochise.csv', 'r')
+csvReader = csv.reader(readFile)
+csvData = list(csvReader)
+
+
+for line in csvData:
+    print(line)
